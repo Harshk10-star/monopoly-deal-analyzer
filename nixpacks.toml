@@ -1,10 +1,10 @@
 [phases.setup]
-nixPkgs = ["nodejs", "python39", "bash"]
+nixPkgs = ["nodejs", "python39", "python39Packages.pip", "bash"]
 
 [phases.install]
 cmds = [
   "cd frontend && npm install",
-  "cd backend && pip install -r requirements_simple.txt"
+  "cd backend && pip3 install -r requirements.txt"
 ]
 
 [phases.build]
@@ -15,4 +15,4 @@ cmds = [
 ]
 
 [start]
-cmd = "cd backend && python main_combined.py"
+cmd = "cd backend && python3 main.py"

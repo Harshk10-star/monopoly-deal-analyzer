@@ -2,11 +2,8 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "bash start.sh"
+startCommand = "cd backend && python main.py"
 healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
-
-[[services]]
-name = "web"
