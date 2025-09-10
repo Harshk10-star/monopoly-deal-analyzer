@@ -36,14 +36,14 @@ const LandingPage: React.FC = () => {
           </div>
           
           <h1 className="text-6xl md:text-7xl font-bold text-slate-900 mb-8 leading-tight">
-            Master Monopoly Deal with
+            Master Property Card Games with
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent block mt-2">
               AI-Powered Strategy
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed max-w-4xl mx-auto">
-            The world's first <strong className="text-slate-800">research-backed AI analyzer</strong> for Monopoly Deal. 
+            The world's first <strong className="text-slate-800">research-backed AI analyzer</strong> for property card games. 
             Get winning strategies based on peer-reviewed academic research.
           </p>
           
@@ -101,7 +101,7 @@ const LandingPage: React.FC = () => {
               Built on Academic Research
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our AI is based on peer-reviewed research: <em>"Implementation of Artificial Intelligence with 3 Different Characters of AI Player on Monopoly Deal Computer Game"</em> by researchers at Universitas Pelita Harapan.
+              Our AI is based on peer-reviewed research on property card game strategy analysis by researchers at Universitas Pelita Harapan.
             </p>
           </div>
           
@@ -199,7 +199,7 @@ const LandingPage: React.FC = () => {
               How It Works
             </h2>
             <p className="text-lg text-gray-600">
-              Three simple steps to master Monopoly Deal
+              Three simple steps to master property card games
             </p>
           </div>
           
@@ -249,7 +249,7 @@ const LandingPage: React.FC = () => {
               Join the Community of Strategic Players
             </h2>
             <p className="text-xl text-blue-100 leading-relaxed">
-              Players are using our research-backed AI to elevate their Monopoly Deal game
+              Players are using our research-backed AI to elevate their property card game strategy
             </p>
           </div>
           
@@ -393,10 +393,10 @@ const LandingPage: React.FC = () => {
                   <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-2 rounded-lg mr-3">
                     <Brain className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold">Monopoly Deal AI</h3>
+                  <h3 className="text-xl font-bold">Deal Analyzer Pro</h3>
                 </div>
                 <p className="text-slate-300 leading-relaxed">
-                  The world's first research-backed AI analyzer for Monopoly Deal. 
+                  The world's first research-backed AI analyzer for property card games. 
                   Built on academic research from Universitas Pelita Harapan.
                 </p>
               </div>
@@ -419,7 +419,7 @@ const LandingPage: React.FC = () => {
             
             <div className="border-t border-slate-700 pt-8 text-center">
               <p className="text-slate-400 mb-2">
-                © 2024 Monopoly Deal AI Analyzer. Built with research from Universitas Pelita Harapan.
+                © 2024 Deal Analyzer Pro. Built with research from Universitas Pelita Harapan.
               </p>
               <p className="text-slate-500 text-sm">
                 Free forever • No subscriptions • No limits
