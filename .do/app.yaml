@@ -1,0 +1,54 @@
+# DigitalOcean App Platform configuration
+name: monopoly-deal-analyzer
+services:
+- name: backend
+  source_dir: /backend
+  github:
+    repo: yourusername/monopoly-deal-analyzer
+    branch: main
+  run_command: uvicorn main:app --host 0.0.0.0 --port 8080
+  environment_slug: python
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 8080
+  health_check:
+    http_path: /health
+  envs:
+  - key: SECRET_KEY
+    scope: RUN_TIME
+    type: SECRET
+  - key: ALLOWED_HOSTS
+    value: '["https://monopoly-deal-analyzer-frontend.ondigitalocean.app"]'
+    scope: RUN_TIME
+  - key: STRIPE_SECRET_KEY
+    scope: RUN_TIME
+    type: SECRET
+  - key: STRIPE_PUBLISHABLE_KEY
+    scope: RUN_TIME
+    type: SECRET
+
+- name: frontend
+  source_dir: /frontend
+  github:
+    repo: yourusername/monopoly-deal-analyzer
+    branch: main
+  build_command: npm install && npm run build
+  run_command: npx serve -s dist -l 8080
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 8080
+  envs:
+  - key: VITE_API_URL
+    value: https://monopoly-deal-analyzer-backend.ondigitalocean.app
+    scope: BUILD_TIME
+  - key: VITE_STRIPE_PUBLISHABLE_KEY
+    scope: BUILD_TIME
+    type: SECRET
+
+databases:
+- name: postgres-db
+  engine: PG
+  version: "15"
+  size: basic-xs
+  num_nodes: 1
