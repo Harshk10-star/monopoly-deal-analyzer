@@ -32,7 +32,7 @@ if __name__ == "__main__":
     sys.path.insert(0, str(backend_path))
     
     # Import and run the backend server
-    from main_combined import app
+    from main_deploy import app
     import uvicorn
     
     port = int(os.environ.get("PORT", 8000))
