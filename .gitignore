@@ -3,7 +3,7 @@ node_modules/
 */node_modules/
 
 # Build outputs
-frontend/dist/
+# frontend/dist/ - We now include this for deployment
 backend/__pycache__/
 *.pyc
 *.pyo

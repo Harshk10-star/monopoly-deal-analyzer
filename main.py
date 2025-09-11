@@ -9,39 +9,22 @@ import sys
 import subprocess
 from pathlib import Path
 
-def build_frontend():
-    """Build the React frontend if not already built"""
-    frontend_dir = Path("frontend")
-    dist_dir = frontend_dir / "dist"
-    
-    if not dist_dir.exists():
-        print("Building frontend...")
-        try:
-            # Install frontend dependencies
-            subprocess.run(["npm", "install"], cwd=frontend_dir, check=True)
-            # Build frontend
-            subprocess.run(["npm", "run", "build"], cwd=frontend_dir, check=True)
-            print("Frontend built successfully!")
-        except subprocess.CalledProcessError as e:
-            print(f"Frontend build failed: {e}")
-            return False
-    
-    # Copy built frontend to backend static folder
+def check_frontend():
+    """Check if frontend static files exist"""
     backend_static = Path("backend/static")
-    backend_static.mkdir(exist_ok=True)
+    index_file = backend_static / "index.html"
     
-    if dist_dir.exists():
-        import shutil
-        if backend_static.exists():
-            shutil.rmtree(backend_static)
-        shutil.copytree(dist_dir, backend_static)
-        print("Frontend copied to backend/static")
-    
-    return True
+    if index_file.exists():
+        print("Frontend static files found!")
+        return True
+    else:
+        print("ERROR: Frontend static files not found in backend/static/")
+        print("Please run 'npm run build' in the frontend directory first.")
+        return False
 
 if __name__ == "__main__":
-    # Build frontend first
-    if not build_frontend():
+    # Check if frontend files exist
+    if not check_frontend():
         sys.exit(1)
     
     # Add backend to Python path
